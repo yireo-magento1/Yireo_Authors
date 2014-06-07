@@ -1,0 +1,62 @@
+<?php
+/**
+ * Authors extension for Magento 
+ *
+ * @category    design_default
+ * @package     Yireo_Authors
+ * @author      Yireo (http://www.yireo.com/)
+ * @copyright   Copyright (c) 2009 Yireo (http://www.yireo.com/)
+ * @license     Authors EULA (www.yireo.com)
+ */
+?>
+
+<div class="content-header">
+<table cellspacing="0">
+	<tr>
+		<td style="width:80%;"><h3 class="icon-head head-tag"><?php echo $this->getHeader('Overview'); ?></h3></td>
+        <td class="formbuttons">
+            <?php echo $this->getSaveButtonHtml(); ?>
+        </td>
+	</tr>
+</table>
+</div>
+
+<div class="entry-edit" id="authors-listing">
+    <?php echo $this->getGridHtml() ?>
+</div>
+
+<script type="text/javascript">
+var authorsForm = new varienForm('authors_edit_form');
+function doSubmit() {
+    authorsForm.submit();
+    return true;
+}
+
+document.observe('dom:loaded', function() {
+
+    $$('div#authors-listing input').each(function(checkbox) {
+
+        indexValue = '' + checkbox.value;
+        if(indexValue != null) {
+            index = parent.modalData.indexOf(indexValue);
+        } else {
+            index = -1;
+        }
+
+        if(index > -1) {
+            checkbox.checked = true;
+        } else {
+            checkbox.checked = false;
+        }
+
+        checkbox.observe('click', function(event){ 
+            if(checkbox.checked == true) {
+                parent.addToData(checkbox.value);
+            } else {
+                parent.removeFromData(checkbox.value);
+            }
+        });
+    });
+});
+
+</script>

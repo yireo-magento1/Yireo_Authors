@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Yireo Modal for Magento 
+ *
+ * @package     Yire_Membership
+ * @author      Yireo (http://www.yireo.com/)
+ * @copyright   Copyright (c) 2009 Yireo (http://www.yireo.com/)
+ * @license     Open Software License
+ */
+-->
+
+<layout>
+    <authors_ajax_index>
+        <reference name="root">
+            <action method="setTemplate"><name>modal/page.phtml</name></action>
+        </reference>
+    </authors_ajax_index>
+
+    <authors_ajax_edit>
+        <reference name="root">
+            <action method="setTemplate"><name>modal/page.phtml</name></action>
+        </reference>
+    </authors_ajax_edit>
+
+    <authors_ajax_new>
+        <reference name="root">
+            <action method="setTemplate"><name>modal/page.phtml</name></action>
+        </reference>
+    </authors_ajax_new>
+</layout>

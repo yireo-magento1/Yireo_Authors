@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Yireo Authors extension
+ *
+ * @author Yireo
+ * @package Authors
+ * @copyright Copyright 2014
+ * @license Yireo EULA (www.yireo.com)
+ * @link http://www.yireo.com
+ */
+-->
+<config>
+
+    <modules>
+        <Yireo_Authors>
+            <version>1.0.1</version>
+        </Yireo_Authors>
+    </modules>
+
+    <global>
+
+        <blocks>
+            <authors>
+                <class>Yireo_Authors_Block</class>
+            </authors>
+        </blocks>
+
+        <helpers>
+            <authors>
+                <class>Yireo_Authors_Helper</class>
+            </authors>
+        </helpers>
+
+        <models>
+            <authors>
+                <class>Yireo_Authors_Model</class>
+                <resourceModel>authors_mysql4</resourceModel>
+            </authors>
+            <authors_mysql4>
+                <class>Yireo_Authors_Model_Mysql4</class>
+                <entities>
+                    <author>
+                        <table>authors_author</table>
+                    </author>
+                </entities>
+            </authors_mysql4>
+            <catalogsearch_mysql4>
+                <rewrite>
+                    <fulltext>Yireo_Authors_Model_Rewrite_Fulltext</fulltext>
+                </rewrite>
+            </catalogsearch_mysql4>
+        </models>
+
+        <resources>
+            <authors_setup>
+                <setup>
+                    <module>Yireo_Authors</module>
+                    <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </authors_setup>
+            <authors_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </authors_write>
+            <authors_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </authors_read>
+        </resources>
+    </global>
+
+    <frontend>
+        <routers>
+            <authors>
+                <use>standard</use>
+                <args>
+                    <module>Yireo_Authors</module>
+                    <frontName>authors</frontName>
+                </args>
+            </authors>
+        </routers>
+        <layout>
+            <updates>
+                <authors>
+                    <file>authors.xml</file>
+                </authors>
+            </updates>
+        </layout>
+    </frontend>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <authors>
+                    <file>authors.xml</file>
+                </authors>
+            </updates>
+        </layout>
+
+        <menu>
+            <catalog>
+                <children>
+                    <attributes>
+                        <children>
+                            <authors translate="title" module="authors">
+                                <title>Authors</title>
+                                <action>authors/index/index</action>
+                            </authors>
+                        </children>
+                    </attributes>
+                </children>
+            </catalog>
+        </menu>
+    </adminhtml>
+
+    <admin>
+        <routers>
+            <authors>
+                <use>admin</use>
+                <args>
+                    <module>Yireo_Authors</module>
+                    <frontName>authors</frontName>
+                </args>
+            </authors>
+        </routers>
+    </admin>
+</config>

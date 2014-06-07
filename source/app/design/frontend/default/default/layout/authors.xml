@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Yireo Authors-module
+ *
+ * @package     Yireo_Authors
+ * @author      Yireo
+ * @copyright   Copyright (c) 2009 Yireo (http://www.yireo.com/)
+ * @license     Open Software License
+ */
+-->
+<layout version="0.1.0">
+    <authors_products_index>
+        <reference name="content">
+            <block type="authors/overview" name="authors.overview" template="authors/overview.phtml">
+                <block type="authors/overview_products" name="authors.overview.products" template="catalog/product/list.phtml" />
+            </block>
+        </reference>
+    </authors_products_index>
+</layout>

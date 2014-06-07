@@ -1,0 +1,124 @@
+<?php
+/**
+ * Yireo Authors for Magento 
+ *
+ * @package     Yireo_Authors
+ * @author      Yireo (http://www.yireo.com/)
+ * @copyright   Copyright (c) 2009 Yireo (http://www.yireo.com/)
+ * @license     Open Software License
+ */
+?>
+<?php
+/**
+ * Author editing page
+ *
+ * @see Yireo_Authors_Block_New
+ */
+
+$author = $this->getAuthor();
+?>
+<div class="content-header">
+<table cellspacing="0">
+	<tr>
+		<td style="width:40%;"><h3 class="icon-head head-tag"><?php echo $this->getHeader('Edit'); ?></h3></td>
+        <td class="formbuttons" align="right">
+            <?php echo $this->getChildHtml('back_button'); ?>
+            <?php echo $this->getChildHtml('save_button'); ?>
+        </td>
+	</tr>
+</table>
+</div>
+
+<div id="alert_messages_block"><?php echo $this->getMessageHtml() ?></div>
+
+<form action="<?php echo $this->getSaveUrl() ?>" method="post" id="authors_edit_form" enctype="multipart/form-data">
+<div class="entry-edit">
+<div class="entry-edit-head">
+    <h4><?php echo $this->__('Edit'); ?></h4>
+</div>
+<div class="fieldset">
+<table cellspacing="0" class="form-list">
+    <tbody>
+        <tr class="headings">
+            <td class="label">
+                <label for="author_id"><?php echo Mage::helper('authors')->__('ID')?></label>
+            </td>
+            <td class="value">
+                <?php echo $author->getAuthorId(); ?>
+                <input type="hidden" name="author[author_id]" id="author_id" value="<?php echo $author->getAuthorId(); ?>" />
+            </td>
+        </tr>
+        <tr class="headings">
+            <td class="label">
+                <label for="full_name"><?php echo Mage::helper('authors')->__('Full Name')?></label>
+            </td>
+            <td class="value">
+                <input type="text" name="author[full_name]" id="full_name" value="<?php echo $author->getFullName(); ?>" />
+            </td>
+        </tr>
+        <tr class="headings">
+            <td class="label">
+                <label for="first_name"><?php echo Mage::helper('authors')->__('First Name')?></label>
+            </td>
+            <td class="value">
+                <input type="text" name="author[first_name]" id="first_name" value="<?php echo $author->getFirstName(); ?>" />
+            </td>
+        </tr>
+        <tr class="headings">
+            <td class="label">
+                <label for="first_letters"><?php echo Mage::helper('authors')->__('First Letters')?></label>
+            </td>
+            <td class="value">
+                <input type="text" name="author[first_letters]" id="first_letters" value="<?php echo $author->getFirstLetters(); ?>" />
+            </td>
+        </tr>
+        <tr class="headings">
+            <td class="label">
+                <label for="prefix"><?php echo Mage::helper('authors')->__('Prefix')?></label>
+            </td>
+            <td class="value">
+                <input type="text" name="author[prefix]" id="prefix" value="<?php echo $author->getPrefix(); ?>" />
+            </td>
+        </tr>
+        <tr class="headings">
+            <td class="label">
+                <label for="last_name"><?php echo Mage::helper('authors')->__('Last name')?></label>
+            </td>
+            <td class="value">
+                <input type="text" name="author[last_name]" id="last_name" value="<?php echo $author->getLastName(); ?>" />
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+
+<?php $products = $this->getAppliedProducts(); ?>
+<?php if(!empty($products)) { ?>
+<div class="entry-edit">
+<div class="entry-edit-head">
+    <h4><?php echo $this->__('Applied products'); ?></h4>
+</div>
+<div class="fieldset">
+<table cellspacing="0" class="form-list" width="100%">
+    <tbody>
+        <?php foreach($this->getAppliedProducts() as $product) { ?>
+        <tr>
+            <td class="label">
+                <a href="<?php echo $this->getUrl('adminhtml/catalog_product/edit', array('id' => $product->getId())); ?>"><?php echo $product->getName(); ?></a>
+            </td>
+        </tr>
+        <?php } ?>
+    </tbody>
+</table>
+</div>
+</div>
+<?php } ?>
+
+<?php echo $this->getBlockHtml('formkey')?>
+</form>
+
+<script type="text/javascript">
+//<![CDATA[
+var authorsForm = new varienForm('authors_edit_form');
+</script>
