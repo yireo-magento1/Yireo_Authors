@@ -10,7 +10,7 @@
 
 class Yireo_Authors_Block_Backend_Overview extends Mage_Adminhtml_Block_Widget_Container
 {
-    /*
+    /**
      * Constructor method
      */
     public function _construct()
@@ -33,7 +33,7 @@ class Yireo_Authors_Block_Backend_Overview extends Mage_Adminhtml_Block_Widget_C
         return $this->getChildHtml('grid');
     }
 
-    /*
+    /**
      * Helper to return the header of this page
      */
     public function getHeader($title = null)

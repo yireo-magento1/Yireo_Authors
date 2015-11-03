@@ -8,20 +8,18 @@
  * @license     Open Source License (OSL v3)
  */
 
-/*
+/**
  * Class for block "authors_overview_products"
  */
 class Yireo_Authors_Block_Overview_Products extends Mage_Catalog_Block_Product_List
 {
-    /*
+    /**
      * Page title
      */
 
-    /*
+    /**
      * Get the products
      *
-     * @access public
-     * @param null
      * @return array
      */
     protected function _getProductCollection()

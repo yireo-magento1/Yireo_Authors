@@ -8,17 +8,17 @@
  * @license     Open Source License (OSL v3)
  */
 
-/*
+/**
  * Ugly hack to require the input-type "modal" prematurely
  */
 require_once 'Yireo/Modal/Lib/Element/Modal.php';
 
-/*
+/**
  * Ugly hack to set the right data inside the modal-box
  */
 Mage::helper('modal')->setData( 'authors/ajax/index', 950, 700 );
 
-/*
+/**
  * Class that defines the EAV attribute "author"
  */
 class Yireo_Authors_Model_Frontend_Author extends Mage_Eav_Model_Entity_Attribute_Frontend_Abstract

@@ -8,15 +8,14 @@
  * @license     Open Source License (OSL v3)
  */
 
-/*
+/**
  * Class for block "authors_edit"
  */
 class Yireo_Authors_Block_Backend_Edit extends Mage_Adminhtml_Block_Widget
 {
-    /*
+    /**
      * Constructor method
      *
-     * @return null
      */
     public function _construct()
     {
@@ -26,7 +25,7 @@ class Yireo_Authors_Block_Backend_Edit extends Mage_Adminhtml_Block_Widget
         $this->setAuthor($author);
     }
 
-    /*
+    /**
      * Helper to return the header of this page
      *
      * @return string
@@ -72,6 +71,8 @@ class Yireo_Authors_Block_Backend_Edit extends Mage_Adminhtml_Block_Widget
 
             return $products;
         }
+
+        return false;
     }
 
     /**

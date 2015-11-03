@@ -110,7 +110,7 @@
                         <children>
                             <authors translate="title" module="authors">
                                 <title>Authors</title>
-                                <action>authors/index/index</action>
+                                <action>adminhtml/authors/index</action>
                             </authors>
                         </children>
                     </attributes>
@@ -121,13 +121,13 @@
 
     <admin>
         <routers>
-            <authors>
-                <use>admin</use>
+            <adminhtml>
                 <args>
-                    <module>Yireo_Authors</module>
-                    <frontName>authors</frontName>
+                    <modules>
+                        <authors after="Mage_Adminhtml">Yireo_Authors</authors>
+                    </modules>
                 </args>
-            </authors>
+            </adminhtml>
         </routers>
     </admin>
 </config>

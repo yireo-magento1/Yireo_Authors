@@ -70,9 +70,9 @@ class Yireo_Authors_AjaxController extends Mage_Adminhtml_Controller_Action
         }
 
         if($this->getRequest()->getParam('back') == 'edit') {
-            $this->_redirect('*/*/edit', array('id' => $item_id));
+            $this->_redirect('*/**/edit', array('id' => $item_id));
         } else {
-            $this->_redirect('*/*/index');
+            $this->_redirect('*/**/index');
         }
         return;
     }
