@@ -4,8 +4,8 @@
  * Authors extension for Magento
  *
  * @package     Yireo_Authors
- * @author      Yireo (http://www.yireo.com/)
- * @copyright   Copyright 2015 Yireo (http://www.yireo.com/)
+ * @author      Yireo (https://www.yireo.com/)
+ * @copyright   Copyright 2015 Yireo (https://www.yireo.com/)
  * @license     Open Source License (OSL v3)
  */
 class Yireo_Authors_Block_Backend_Overview_Grid extends Mage_Adminhtml_Block_Widget_Grid

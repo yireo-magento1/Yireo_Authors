@@ -2,11 +2,11 @@
 /**
  * Yireo Authors
  *
- * @author      Yireo (http://www.yireo.com/)
+ * @author      Yireo (https://www.yireo.com/)
  * @package     Yireo_Authors
- * @copyright   Copyright 2015 Yireo (http://www.yireo.com/)
+ * @copyright   Copyright 2015 Yireo (https://www.yireo.com/)
  * @license     Open Source License (OSL v3)
- * @link        http://www.yireo.com/
+ * @link        https://www.yireo.com/
  */
 
 class Yireo_Authors_Helper_Data extends Mage_Core_Helper_Abstract
